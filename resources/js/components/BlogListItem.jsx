@@ -14,16 +14,16 @@ const BlogListItem = ({ blog }) => {
       <div className="p-4 flex flex-col justify-between">
         <div>
           <h2 className="text-2xl font-semibold text-gray-800 hover:text-indigo-600 transition duration-300">
-            <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
+            <Link to={`/blogs/${blog.slug}`}>{blog.title}</Link>
           </h2>
-          <p className="text-sm text-gray-500 mt-2">{blog.createdAt}</p>
-          <p className="text-gray-600 mt-4">{blog.snippet}</p>
+          <p className="text-sm text-gray-500 mt-2">{blog.created_at}</p>
+          <p className="text-gray-600 mt-4">{blog.description}</p>
         </div>
 
         {/* Read More Button */}
         <div className="mt-6">
           <Link
-            to={`/blogs/${blog.id}`}
+            to={`/blogs/${blog.slug}`}
             className="text-indigo-600 font-semibold hover:text-indigo-800 transition duration-300"
           >
             Read More

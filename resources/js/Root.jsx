@@ -44,8 +44,8 @@ const Root = () => {
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/blogs" element={<BlogList blogs={blogs} />} />
-          <Route path="/blogs/:id" element={<BlogDetails />} />
+          <Route path="/blogs" element={<BlogList />} />
+          <Route path="/blogs/:slug" element={<BlogDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
