@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BlogListItem from "../components/BlogListItem";
+import axios from "axios";
 
-const BlogList = ({ blogs }) => {
-    console.log(blogs);
+const BlogList = () => {
+  const [blogs, setBlogs] = useState([]);
+  const fetchBlogs = () => {
+    axios.get('/api/blogs').then((response) => {
+      setBlogs(response.data);
+    })
+  }
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
   return (
     <div className="container mx-auto px-4">
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
